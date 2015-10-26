@@ -1,0 +1,65 @@
+html {
+  box-sizing: border-box;
+}
+
+body{
+	font-family: Open Sans;
+	font-size: 2em;
+	width: 90%;
+	margin: 0 auto;
+
+}
+
+
+h1{
+	color: #c71f1f;
+	text-align: center;
+
+}
+
+#input-area {
+	text-align: center;
+	width: 100%;
+}
+
+input{
+
+	font-size: 1.1em;
+}
+
+#submit-button{
+	height:30px;
+	width: 80px;
+	background-color: #c71f1f;
+	border: none;
+	font-size: .6em;
+	font-weight: bold;
+	color: white;
+}
+
+#search-results{
+	width: 100%;
+	margin-top: 2em;
+}
+
+.video-display{
+	width:33.333%;
+	display: inline-block;
+	float: left;
+	text-align: center;
+	height: 430px;
+	
+
+}
+
+
+p{
+	font-size: .5em;
+	color: gray;
+	
+}
+
+img{
+	border:6px solid #c71f1f;
+	margin: 0 auto;
+}
