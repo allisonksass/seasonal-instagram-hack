@@ -4,10 +4,11 @@
 
 body{
 	font-family: Open Sans;
-/*	width: 100%;*/
+	width: 100%;
 	margin: 0 auto;
 
 }
+
 
 #start-over{
 	text-align: right;
@@ -15,7 +16,7 @@ body{
 	color: gray;
 	font-weight: 600;
 	padding: 1em 2.5em 0 0;
-	
+	cursor: pointer;
 
 }
 
@@ -37,33 +38,14 @@ h2{
 	margin-top: -2em;
 	margin-bottom: 3em;
 
-
 }
 
-#input-area {
-	text-align: center;
-	width: 100%;
-}
-
-input{
-
-	font-size: 1.1em;
-}
-
-#submit-button{
-	height:30px;
-	width: 80px;
-	background-color: #c71f1f;
-	border: none;
-	font-size: .6em;
-	font-weight: bold;
-	color: white;
-}
 
 #search-results{
 	width: 100%;
 	margin-top: 2em;
 	box-sizing: border-box;
+
 }
 
 .photo-display{
@@ -73,19 +55,52 @@ input{
 	text-align: center;
 	box-sizing: border-box;
 	padding-top:2em;
+	z-index: 1;
+	margin-bottom: 3em;
 	
+	
+}
+
+.photo-display:hover img {
+	opacity: .4;
+	color:black;
+	cursor:pointer;
+	
+}
+
+
+.photo-caption {
+	
+	position: absolute;
+	z-index: 10;
+	/*margin: 0 auto;*/
+	width: 25%;
+	display:none;
+	
+	box-sizing: border-box;
+	padding:0;
+	margin-top: 7em;
+}
+
+.photo-caption span{
+	color: black;
+	font-weight: bold;
+	font-size: 1.5em;
+	opacity: 1;	
+}
+
+.photo-caption:hover{
+	cursor: pointer;
 }
 
 #seasons{
 	width: 100%;
 }
 
-.snow, .spring, .summer, .fall {
+.snow, .flowers, .beach, .fall {
 	float: left;
 	width:25%;
 	display: inline-block;
-	height: 330px;
-	
 	text-align: center;
 	height: 300px;
 	padding-top: 3.8em;
@@ -96,7 +111,7 @@ input{
 	opacity: 0.8;
 }
 
-.snow:hover, .spring:hover, .summer:hover, .fall:hover {
+.snow:hover, .flowers:hover, .beach:hover, .fall:hover {
 	
 	opacity: 1;
 }
@@ -105,7 +120,6 @@ input{
 p{
 	font-size: 3em;
 	color: white;
-	
 	
 }
 
@@ -119,12 +133,10 @@ img{
 	background: url(../seasonal-instagram-hack/images/winter.png) center;
 	background-repeat: no-repeat;
 	opacity: 0.7;
-
-
 	
 }
 
-.spring{
+.flowers{
 	background: url(../seasonal-instagram-hack/images/spring.png) center;
 	height: 300px;
 	background-repeat: no-repeat;
@@ -132,7 +144,7 @@ img{
 	
 }
 
-.summer{
+.beach{
 	background: url(../seasonal-instagram-hack/images/summer.png) center;
 	height: 300px;
 	background-repeat: no-repeat;
@@ -144,6 +156,66 @@ img{
 	background: url(../seasonal-instagram-hack/images/fall.png) center;
 	height: 300px;
 	background-repeat: no-repeat;
-
 	
 }
+
+#view-more{
+	color: gray;
+	height: 70px;
+	width:140px;
+	font-size: 1.3em;
+	border: 4px solid gray;
+	clear: both;
+	text-align: center;
+	padding-top: 18px;
+	margin: 0 auto;
+    cursor: pointer;
+    display:none;
+
+}
+
+#view-more:hover{
+	opacity: .6;
+}
+
+/*Making things responsive*/
+
+@media only screen and (max-width: 1000px) {
+
+.snow, .flowers, .beach, .fall {
+    width: 50%;
+    
+   }
+
+  .photo-caption {
+  	width: 50%;
+
+  }
+
+  .photo-display{
+	width:50%;
+}
+
+ }
+
+
+
+@media only screen and (max-width: 600px) {
+
+.snow, .flowers, .beach, .fall {
+    width: 100%;
+    
+   }
+
+   .photo-caption {
+  	width: 100%;
+
+  }
+
+  .photo-display{
+	width:100%;
+}
+
+ }
+    
+
