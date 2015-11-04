@@ -1,24 +1,25 @@
 $(document).ready(function(){
 
+//Defining min variable to load new pictures
+var min =""
 
-   var min =""
 
- $("#seasons").on("click", "div", chooseSeason);
+$("#seasons").on("click", "div", chooseSeason);
 
-  
 
 function chooseSeason (){
 
   seasonName = $(this).attr("class");
    
-    getRequest(seasonName);
-   $('#seasons').hide();
-   $('#search-results').show();
-   $('#view-more').show();
+  getRequest(seasonName);
+  $('#seasons').hide();
+  $('#search-results').show();
+  $('#view-more').show();
 
 
   }
 
+//Show and hide the number of likes on each photo 
 
   $('#search-results').on('mouseenter', 'div', function() {
       $(this).children('.photo-caption').show();
@@ -51,29 +52,26 @@ function getRequest(seasonName){
   
 
 function showResults(photos){
-  // var html = "";
 
+  //using pagination to get the next set of photos
   min = photos.pagination.next_max_tag_id;
   
   $.each(photos.data, function(i,data){
 
-    //var html = "";
-
-  var img= photos.data[i].images.standard_resolution.url;
+   var img= photos.data[i].images.standard_resolution.url;
    link = photos.data[i].link;
-  likes = photos.data[i].likes.count;
+   likes = photos.data[i].likes.count;
 
-    var html = '<div class="photo-display"><div class="photo-caption"> <span class="likes"> &hearts;'+likes+'</span></div><a href="'+link+'"><img width="300px" height="300px"src="' +img+ '"></a></div>';
+    var photoResult = '<div class="photo-display"><div class="photo-caption"> <span class="likes"> &hearts;'+likes+'</span></div><a target="_blank" href="'+link+'"><img width="300px" height="300px"src="' +img+ '"></a></div>';
     console.log(data.images);
 
-    $('#search-results').append(html);
+    $('#search-results').append(photoResult);
 
   });
 
-
 }
 
-
+//Show seasons again when clicking +startover
 
 $("#start-over").on("click", function(){
 
@@ -82,19 +80,17 @@ $("#start-over").on("click", function(){
   $('#view-more').hide();
   $('#search-results').html('');
 
-
 });
 
+//Load new set of instagram photos when clicking the view more box
 
 $("#view-more").on("click", function(){
 
-
-  console.log("This works");
+  console.log("New set of images");
   getRequest(seasonName);
 
 
 });
-
 
 
 
